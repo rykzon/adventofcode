@@ -23,12 +23,6 @@ prompts = {     "A":    {
                             "beats": "Y",
                             "beaten": "X",
                             "draw": "Z"}}
-
-def find_response(other):
-    for otherAlias, myAlias in responses.items():
-        if otherAlias == other:
-            return myAlias
-
 def get_total (lines):
     points = 0
     for line in lines:
