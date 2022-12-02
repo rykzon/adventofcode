@@ -16,15 +16,20 @@ class Elve(object):
 def make_elve(name):
     elve = Elve(name)
     return elve
+
 def get_carryElve(elves):
     elves_sorted = sorted(elves,reverse=True)
-    return "Elve: "+elves_sorted[0].name + " Inventory: "+ str(elves_sorted[0].suminv())
+    return elves_sorted[0].suminv()
 
+def get_top3(elves):
+    elves_sorted = sorted(elves,reverse=True)
+    top3 = elves_sorted[0:3]
+    return sum(list(map(lambda x:x.suminv(),top3)))
 elves=[]
 elvecounter=1
 currentelve = make_elve("elve1")
 
-with open("./inventory.txt") as f:
+with open("./0112/inventory.txt") as f:
     lines = [line.rstrip() for line in f]
 
 for l in lines:
@@ -35,5 +40,7 @@ for l in lines:
     else:
         currentelve.add_inv(int(l))
 elves.append(currentelve)
-
+print ("Top Inventory")
 print (get_carryElve(elves))
+print ("Top 3 Inventory")
+print (get_top3(elves))
