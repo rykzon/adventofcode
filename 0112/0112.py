@@ -24,8 +24,7 @@ elves=[]
 elvecounter=1
 currentelve = make_elve("elve1")
 
-with open("/home/rene/Documents/inventory.txt") as f:
-    #lines = f.readlines()
+with open("./inventory.txt") as f:
     lines = [line.rstrip() for line in f]
 
 for l in lines:
