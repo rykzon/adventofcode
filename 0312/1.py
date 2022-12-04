@@ -12,5 +12,4 @@ for ruck in lines:
         if comp2.find(c) > -1 and done.find(c) == -1:
             priosum=priosum+values.index(c)+1
             done = done + c
-print(priosum)
-           
+print(priosum)    
